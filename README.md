@@ -14,7 +14,7 @@ TUPlan is an unofficial, student-built project and is not affiliated with TU
 Darmstadt.
 
 Install it from [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/tuplan-grade-reporter/)
-or the [Chrome Web Store](https://chromewebstore.google.com/search/TUPlan%20Grade%20Reporter).
+or the [Chrome Web Store](https://chromewebstore.google.com/detail/tuplan-grade-reporter/cgkinnhmikpajigbddhkonfigpenbhkb).
 
 ## What leaves your browser
 
