@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>TUPlan Grade Reporter</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      width: 300px;
+      margin: 0;
+      padding: 14px;
+      font: 13px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: Canvas;
+      color: CanvasText;
+    }
+    h1 { margin: 0 0 8px; font-size: 15px; }
+    p { margin: 0 0 10px; color: color-mix(in srgb, CanvasText 70%, Canvas); }
+    ul { margin: 0 0 10px; padding-left: 18px; color: color-mix(in srgb, CanvasText 70%, Canvas); }
+    li { margin-bottom: 3px; }
+    a { color: #2b4a8b; }
+    .foot { font-size: 11px; color: color-mix(in srgb, CanvasText 55%, Canvas); }
+  </style>
+</head>
+<body>
+  <h1>TUPlan Grade Reporter</h1>
+  <p>
+    Öffne in TUCaN den <strong>Notenspiegel</strong> eines Kurses. Dort erscheint
+    eine Schaltfläche, um die Notenverteilung anonym an TUPlan zu melden.
+  </p>
+
+  <p><strong>Was gesendet wird:</strong></p>
+  <ul>
+    <li>Kursnummer, Titel und Semester</li>
+    <li>Die Anzahl je Note (1,0 bis 5,0)</li>
+    <li>Durchschnitt und Anzahl vorliegender Ergebnisse</li>
+  </ul>
+
+  <p><strong>Was nie gesendet wird:</strong> dein Name, deine Matrikelnummer,
+  deine eigene Note, Cookies oder irgendetwas von anderen Seiten.</p>
+
+  <p class="foot">
+    Von Studierenden gebaut. Kein offizielles Angebot der TU Darmstadt.
+  </p>
+</body>
+</html>

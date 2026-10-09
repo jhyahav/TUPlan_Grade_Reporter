@@ -1,0 +1,21 @@
+{
+  "name": "@tuplan/extension",
+  "version": "1.1.2",
+  "private": true,
+  "description": "TUPlan grade reporter — a Manifest V3 browser extension that reports cohort-level grade distributions from the student's own TUCaN session. One codebase, two builds: Chrome Web Store and AMO.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "vite build",
+    "build:firefox": "node scripts/build.mjs firefox",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tuplan/shared-types": "*"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

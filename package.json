@@ -1,0 +1,30 @@
+{
+  "name": "tuplan-grade-reporter",
+  "private": true,
+  "description": "TUPlan Grade Reporter — a browser extension that reports and shows grade distributions inside TU Darmstadt’s TUCaN.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhyahav/TUPlan_Grade_Reporter.git"
+  },
+  "workspaces": [
+    "packages/shared-types",
+    "apps/extension"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build": "npm run build -w @tuplan/extension",
+    "build:firefox": "npm run build:firefox -w @tuplan/extension",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true
+  }
+}

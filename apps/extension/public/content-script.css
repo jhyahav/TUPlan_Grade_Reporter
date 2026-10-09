@@ -1,0 +1,283 @@
+/*
+  Styles for the report bar and the course overlay. Everything is namespaced under
+  `.tuplan-`; nothing may restyle TUCaN's own page.
+*/
+
+.tuplan-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 10px 12px;
+  border: 1px solid #c8c8c1;
+  border-left: 3px solid #2b4a8b;
+  border-radius: 3px;
+  background: #f7f8fb;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #16171a;
+
+  /* Stated rather than inherited from TUCaN's floated, width-constrained layout, so
+     the bar matches the table's width. `clear` keeps it below the Drucken/Schließen
+     strip. */
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  float: none;
+  clear: both;
+}
+
+.tuplan-button {
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 3px;
+  background: #2b4a8b;
+  color: #fff;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tuplan-button:hover:not(:disabled) {
+  background: #223c73;
+}
+
+.tuplan-button:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.tuplan-button:focus-visible {
+  outline: 2px solid #2b4a8b;
+  outline-offset: 2px;
+}
+
+.tuplan-button[data-state='error'] {
+  background: #9b2c2c;
+}
+
+.tuplan-status:empty {
+  display: none;
+}
+
+.tuplan-status[data-tone='ok'] { color: #2f6b46; }
+.tuplan-status[data-tone='warn'] { color: #8a5a12; }
+.tuplan-status[data-tone='error'] { color: #9b2c2c; }
+
+.tuplan-note {
+  flex-basis: 100%;
+  color: #55575d;
+  font-size: 12px;
+}
+
+/*
+  The course overlay: a badge beside a course link, and one popover. Each box
+  states its own `box-sizing`, font and `line-height` rather than inheriting
+  TUCaN's. The badge is one colour whatever the grade; colour never carries
+  meaning alone.
+*/
+
+.tuplan-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  margin: 0 0 0 6px;
+  padding: 1px 6px;
+  border: 1px solid #b9c2d8;
+  border-radius: 9px;
+  background: #eef1f8;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #223c73;
+  cursor: help;
+  vertical-align: baseline;
+  /* The badge sits inside table cells whose text may wrap; it must not be the
+     thing that widens a column. */
+  white-space: nowrap;
+}
+
+.tuplan-badge:hover,
+.tuplan-badge:focus-visible {
+  background: #e2e8f6;
+  border-color: #8d9bc0;
+}
+
+/* An outline as well as the tint above: colour alone is not a focus signal. */
+.tuplan-badge:focus-visible {
+  outline: 2px solid #2b4a8b;
+  outline-offset: 1px;
+}
+
+.tuplan-badge-mark {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.tuplan-popover {
+  position: fixed;
+  z-index: 2147483000;
+  width: 260px;
+  max-width: calc(100vw - 16px);
+  padding: 10px 12px;
+  border: 1px solid #c8c8c1;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 18%);
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #16171a;
+  /* Pointer-transparent so moving toward it does not re-enter a hover cycle, and
+     so it can never swallow a click meant for the page underneath. */
+  pointer-events: none;
+}
+
+.tuplan-popover-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-bottom: 8px;
+}
+
+.tuplan-popover-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6a6d75;
+}
+
+.tuplan-popover-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tuplan-stat {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0 8px;
+  margin-bottom: 6px;
+}
+
+.tuplan-stat-label {
+  color: #40434a;
+}
+
+.tuplan-stat-value {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tuplan-stat-hint {
+  grid-column: 1 / -1;
+  font-size: 10px;
+  color: #6a6d75;
+}
+
+.tuplan-popover-section {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e6e6e2;
+}
+
+.tuplan-popover-subhead {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6a6d75;
+}
+
+.tuplan-histogram {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  align-items: end;
+  gap: 2px;
+}
+
+.tuplan-histogram-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* Must be a fixed height: the bars' percentage heights need a definite parent. */
+.tuplan-histogram-track {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 34px;
+}
+
+.tuplan-histogram-bar {
+  width: 100%;
+  min-height: 1px;
+  border-radius: 1px 1px 0 0;
+  background: #2b4a8b;
+}
+
+.tuplan-histogram-bar[data-failing='true'] {
+  background: #9b2c2c;
+  /* A hatch as well as the colour: colour never carries meaning alone. */
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgb(255 255 255 / 45%) 0 2px,
+    transparent 2px 4px
+  );
+}
+
+.tuplan-histogram-label,
+.tuplan-histogram-count {
+  font-size: 8px;
+  line-height: 1.2;
+  color: #6a6d75;
+  font-variant-numeric: tabular-nums;
+}
+
+.tuplan-histogram-count {
+  font-weight: 600;
+  color: #40434a;
+}
+
+.tuplan-terms {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tuplan-term-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  gap: 0 8px;
+}
+
+.tuplan-term-avg {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.tuplan-term-n {
+  font-size: 10px;
+  color: #6a6d75;
+  font-variant-numeric: tabular-nums;
+}
+
+.tuplan-popover-note {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  line-height: 1.35;
+  color: #6a6d75;
+}

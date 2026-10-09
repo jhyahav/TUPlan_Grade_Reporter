@@ -1,0 +1,6 @@
+{
+  "extDescription": {
+    "description": "Manifest description. Shown in the install dialog and on chrome://extensions — not the Store listing, which is written per-locale in the dashboard. Max 132 characters.",
+    "message": "Melde die anonyme Notenverteilung eines Kurses an TUPlan — nur die Kohortentabelle, die TUCaN dir ohnehin zeigt."
+  }
+}
