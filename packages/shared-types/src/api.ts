@@ -154,6 +154,12 @@ export interface LanguageDto {
   courseCount: number
 }
 
+export interface CreditFigure {
+  value: number
+  /** From SWS by the rule of thumb, not published anywhere. */
+  estimated: boolean
+}
+
 export interface CourseSummaryDto {
   id: string
   tucanId: string
@@ -163,6 +169,13 @@ export interface CourseSummaryDto {
   departmentNameDe: string
   departmentNameEn: string
   hasGrades: boolean
+  /** CP as the module handbooks give them, or null where a module bundles this course with others. */
+  handbookCreditPoints: number | null
+  /**
+   * On a list row, which carries no offering: the credit points of the term listed, else
+   * the newest, published or estimated from SWS. Absent elsewhere; read the offering.
+   */
+  credits?: CreditFigure | null
   /** The TUCaN courses this module publishes; empty without offerings. */
   parts: ComponentDto[]
   /**
