@@ -176,6 +176,11 @@ export interface CourseSummaryDto {
    * the newest, published or estimated from SWS. Absent elsewhere; read the offering.
    */
   credits?: CreditFigure | null
+  /**
+   * On a list row: the grade average across every semester, weighted by cohort size,
+   * or null without grade data. Absent elsewhere.
+   */
+  pooledAverage?: number | null
   /** The TUCaN courses this module publishes; empty without offerings. */
   parts: ComponentDto[]
   /**
