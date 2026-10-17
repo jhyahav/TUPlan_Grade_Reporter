@@ -193,6 +193,12 @@ export interface CourseSummaryDto {
 
 export interface CourseDetailDto extends CourseSummaryDto {
   offerings: OfferingDto[]
+  /**
+   * The module handbooks' description, shown where an offering has none of its own.
+   * `module` names the module when it bundles this course with others, since the text
+   * is then the module's.
+   */
+  handbookDescription: { content: string; module: string | null } | null
   averageOfAverages: number | null
   pooledAverage: number | null
   semestersWithGrades: number
